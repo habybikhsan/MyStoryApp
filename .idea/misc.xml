@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MyStoryApp/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1606425702811245" />
+        <entry key="..\:/MyStoryApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.15881147540983606" />
+        <entry key="..\:/MyStoryApp/app/src/main/res/layout/activity_login.xml" value="0.2105978260869565" />
         <entry key="..\:/MyStoryApp/app/src/main/res/layout/activity_main.xml" value="0.2105978260869565" />
       </map>
     </option>

@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStoryApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
