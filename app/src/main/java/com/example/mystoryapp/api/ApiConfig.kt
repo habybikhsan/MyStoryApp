@@ -1,4 +1,4 @@
-package com.c22_ce02.awmonitorapp.api
+package com.example.mystoryapp.api
 
 import androidx.viewbinding.BuildConfig
 import okhttp3.OkHttpClient
