@@ -5,11 +5,11 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Story (
-    val photoUrl: String? = null,
-    val createdAt: String? = null,
-    val name: String? = null,
-    val description: String? = null,
-    val id: String? = null,
-    val lon: Double? = null,
-    val lat: Double? = null
+    var id: String,
+    var name: String,
+    var description: String,
+    var photoUrl: String,
+    var createdAt: String,
+    var lat: Double,
+    var lon: Double
 ): Parcelable
