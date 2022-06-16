@@ -6,4 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".ui.DetailStoryActivity">
 
+    <ImageView
+        android:id="@+id/imgStory"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_name"
+        tools:src="@tools:sample/cities" />
+
+    <TextView
+        android:id="@+id/tv_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imgStory"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/name" />
+
+    <TextView
+        android:id="@+id/tv_item_createdAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgStory"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_description"
+        tools:text="3 menit yang lalu" />
+
+    <TextView
+        android:id="@+id/tv_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/imgStory"
+        app:layout_constraintTop_toBottomOf="@+id/imgStory"
+        tools:text="@string/description" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

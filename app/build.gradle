@@ -17,7 +17,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "BASE_URL_STORY", "'https://story-api.dicoding.dev/v1'")
+        buildConfigField "String", "BASEURL", "\"https://story-api.dicoding.dev/v1/\""
     }
 
     buildTypes {
@@ -67,4 +67,7 @@ dependencies {
 
     //jsoup
     implementation 'org.jsoup:jsoup:1.13.1'
+
+    //time4j
+    implementation group: 'net.time4j', name: 'time4j-android', version: '4.8-2021a'
 }

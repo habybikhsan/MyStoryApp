@@ -7,7 +7,7 @@ import com.example.mystoryapp.data.repository.StoryRepository
 object Injection {
 
     fun provideStoryRepository(): StoryRepository {
-        val apiService = ApiConfig.getApiService(BuildConfig.BASE_URL_STORY)
+        val apiService = ApiConfig.getApiService(BuildConfig.BASEURL)
         return StoryRepository(apiService)
     }
 }

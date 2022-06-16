@@ -27,10 +27,14 @@
             <ImageView
                 android:id="@+id/imgStory"
                 android:layout_width="match_parent"
-                android:layout_height="200sp"
+                android:layout_height="300dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:scaleType="fitXY"
+                card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
-                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@+id/tv_item_name"
                 tools:ignore="ContentDescription,ImageContrastCheck"
                 tools:src="@tools:sample/cities" />
 
@@ -38,21 +42,22 @@
                 android:id="@+id/tv_item_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                card_view:layout_constraintStart_toStartOf="@+id/imgStory"
-                card_view:layout_constraintTop_toBottomOf="@+id/imgStory"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                tools:text="@string/name"/>
+                card_view:layout_constraintStart_toStartOf="@+id/imgStory"
+                card_view:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/name" />
 
             <TextView
                 android:id="@+id/tv_item_createdAt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 card_view:layout_constraintEnd_toEndOf="@+id/imgStory"
                 card_view:layout_constraintTop_toBottomOf="@+id/imgStory"
-                tools:text="3 menit yang lau" />
+                tools:text="3 menit yang lalu" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
