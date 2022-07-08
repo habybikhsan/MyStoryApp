@@ -3,15 +3,15 @@ package com.example.mystoryapp.adapter
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mystoryapp.data.Story
+import com.example.mystoryapp.data.response.ResponseStory
 import com.example.mystoryapp.databinding.ItemListStoryBinding
-import com.example.mystoryapp.ui.DetailStoryActivity
+import com.example.mystoryapp.ui.activity.DetailStoryActivity
+import com.example.mystoryapp.utils.convertToTimeAgo
 import com.example.mystoryapp.utils.loadImageViaGlide
 
-class StoryAdapter(private val listStory: ArrayList<Story>):
+class StoryAdapter(private val listStory: List<ResponseStory.ListStoryItem>):
     RecyclerView.Adapter<StoryAdapter.ListViewHolder>() {
 
 
@@ -34,12 +34,12 @@ class StoryAdapter(private val listStory: ArrayList<Story>):
     override fun getItemCount(): Int = listStory.size
 
     inner class ListViewHolder(private val binding: ItemListStoryBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind (story:Story){
+        fun bind (story: ResponseStory.ListStoryItem){
             with(binding){
                 tvItemName.text = story.name
-                tvItemCreatedAt.text = story.createdAt
+                tvItemCreatedAt.text = convertToTimeAgo(story.createdAt)
                 itemView.apply {
-                    context.loadImageViaGlide(story.photoUrl?.toUri(), binding.imgStory)
+                    context.loadImageViaGlide(story.photoUrl.toUri(), binding.imgStory)
                     setOnClickListener {
                         val intent = Intent(context, DetailStoryActivity::class.java)
                         intent.putExtra(DetailStoryActivity.EXTRA_DATA, story)
@@ -48,6 +48,5 @@ class StoryAdapter(private val listStory: ArrayList<Story>):
                 }
             }
         }
-
     }
 }

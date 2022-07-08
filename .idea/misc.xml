@@ -8,9 +8,19 @@
         <entry key="..\:/MyStoryApp/app/src/main/res/layout-w1240dp/item_recycleview_story.xml" value="0.1" />
         <entry key="..\:/MyStoryApp/app/src/main/res/layout-w1240dp/item_row_users.xml" value="0.1606425702811245" />
         <entry key="..\:/MyStoryApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.15881147540983606" />
+        <entry key="..\:/MyStoryApp/app/src/main/res/layout/activity_detail_story.xml" value="0.20521590423257802" />
         <entry key="..\:/MyStoryApp/app/src/main/res/layout/activity_login.xml" value="0.2105978260869565" />
         <entry key="..\:/MyStoryApp/app/src/main/res/layout/activity_main.xml" value="0.2105978260869565" />
-        <entry key="..\:/MyStoryApp/app/src/main/res/layout/item_list_story.xml" value="0.2" />
+        <entry key="..\:/MyStoryApp/app/src/main/res/layout/item_list_story.xml" value="0.4" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable-v24/ic_email.xml" value="0.121" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable-v29/ic_baseline_clear_24.xml" value="0.121" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable/bg_button.xml" value="0.121" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable/bg_button_disable.xml" value="0.121" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.121" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/layout/activity_authentication.xml" value="0.4" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/layout/activity_detail_story.xml" value="0.1" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/layout/activity_register.xml" value="0.4" />
       </map>
     </option>
   </component>
