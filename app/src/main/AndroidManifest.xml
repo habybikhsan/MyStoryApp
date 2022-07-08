@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mystoryapp">
-
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,16 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStoryApp">
         <activity
-            android:name=".ui.activity.RegisterActivity"
+            android:name=".ui.DetailStoryActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.DetailStoryActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.activity.MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.activity.LoginActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,5 +22,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
