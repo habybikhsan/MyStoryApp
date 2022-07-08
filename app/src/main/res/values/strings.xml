@@ -26,5 +26,12 @@
     <string name="unauthorized">Email or password might be wrong</string>
     <string name="timeout">Timeout!! please try again later</string>
     <string name="error_message">Error message :</string>
+    <string name="logout">Logout</string>
+    <string name="you_sure">are you sure?</string>
+    <string name="no">no</string>
+    <string name="yes">yes</string>
+    <string name="error_load">Failed to load. Message:</string>
+
+
 
 </resources>
