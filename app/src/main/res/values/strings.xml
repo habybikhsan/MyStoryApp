@@ -22,5 +22,9 @@
     <string name="lihat_password">Lihat password</string>
     <string name="register_here">Register Here.</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="success_login">Login successfully. Message</string>
+    <string name="unauthorized">Email or password might be wrong</string>
+    <string name="timeout">Timeout!! please try again later</string>
+    <string name="error_message">Error message :</string>
 
 </resources>

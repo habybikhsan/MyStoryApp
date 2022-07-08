@@ -22,15 +22,6 @@
         app:layout_constraintVertical_bias="0" />
 
     <com.example.mystoryapp.customview.editText.EmailEditText
-        android:id="@+id/email_input"
-        style="@style/inputText"
-        android:layout_marginTop="16dp"
-        android:background="@color/grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_input" />
-
-    <com.example.mystoryapp.customview.editText.EmailEditText
         android:id="@+id/name_input"
         style="@style/inputText"
         android:background="@color/grey"
@@ -38,6 +29,15 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title" />
+
+    <com.example.mystoryapp.customview.editText.EmailEditText
+        android:id="@+id/email_input"
+        style="@style/inputText"
+        android:layout_marginTop="16dp"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_input" />
 
     <com.example.mystoryapp.customview.editText.PasswordEditText
         android:id="@+id/password_input"
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_input" />
 
-    <com.example.mystoryapp.customview.button.LoginButton
+    <com.example.mystoryapp.customview.button.RegisterButton
         android:id="@+id/button_login"
         android:layout_width="0dp"
         android:layout_height="48dp"

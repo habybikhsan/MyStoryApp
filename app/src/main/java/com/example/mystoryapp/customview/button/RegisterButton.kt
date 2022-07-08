@@ -30,7 +30,7 @@ class RegisterButton : AppCompatButton {
         setTextColor(txtColor)
         textSize = 12f
         gravity = Gravity.CENTER
-        text = if(isEnabled) "Login" else "Login"
+        text = if(isEnabled) "Register" else "Register"
     }
 
     private fun init() {

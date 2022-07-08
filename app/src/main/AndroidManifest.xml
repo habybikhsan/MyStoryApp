@@ -10,16 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStoryApp">
         <activity
-            android:name=".ui.DetailStoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+        android:name=".ui.activity.RegisterActivity"
+        android:exported="true"/>
+        <activity
+        android:name=".ui.activity.DetailStoryActivity"
+        android:exported="false" />
+        <activity
+        android:name=".ui.activity.MainActivity"
+        android:exported="true"/>
     </application>
 </manifest>

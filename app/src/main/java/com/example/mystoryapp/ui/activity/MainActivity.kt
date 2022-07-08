@@ -7,11 +7,15 @@ import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
+import com.example.mystoryapp.UserPreference
 import com.example.mystoryapp.adapter.StoryAdapter
 import com.example.mystoryapp.data.response.ResponseStory
 import com.example.mystoryapp.databinding.ActivityMainBinding
 import com.example.mystoryapp.ui.model.StoryViewModel
+import com.example.mystoryapp.ui.model.UserViewModel
 import com.example.mystoryapp.ui.modelfactory.StoryViewModelFactory
+import com.example.mystoryapp.ui.modelfactory.ViewModelFactory
 import com.example.mystoryapp.utils.initializeTime4A
 
 class MainActivity : AppCompatActivity() {
@@ -34,8 +38,14 @@ class MainActivity : AppCompatActivity() {
 
         initializeTime4A()
 
-        token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyLWZsb3RXcTczZ05wQnlTa1QiLCJpYXQiOjE2NTUzNDg5MDd9.ptbfv0Xz65mAnuUk89vzLdpbyHwye0yY1SZZHktI0r0"
-        storyViewModel.getStory(token)
+        val pref = UserPreference.getInstance(dataStore)
+        val userViewModel = ViewModelProvider(this, ViewModelFactory(pref))[UserViewModel::class.java]
+
+        userViewModel.getToken().observe(this){
+            token = it
+            storyViewModel.getStory(token)
+        }
+
 
         storyViewModel.message.observe(this){
             setStory(storyViewModel.storiess)
