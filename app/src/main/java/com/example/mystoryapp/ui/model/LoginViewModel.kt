@@ -14,12 +14,13 @@ class LoginViewModel (private val repository: LoginRepository) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
     private val _userLogin = MutableLiveData<ResponseLogin>()
-    val userlogin: LiveData<ResponseLogin> = _userLogin
+    val userLogin: LiveData<ResponseLogin> = _userLogin
     var isError: Boolean = false
 
     fun login(
         requestLogin: RequestLogin
     ) {
+        _isLoading.value = true
         val call = repository.fetchUser(requestLogin)
         call.enqueue(object : Callback<ResponseLogin> {
             override fun onResponse(call: Call<ResponseLogin>, response: Response<ResponseLogin>) {

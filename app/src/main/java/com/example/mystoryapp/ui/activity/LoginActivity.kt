@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
 
         with(loginViewModel){
             message.observe(this@LoginActivity){
-                val user = userlogin.value
+                val user = userLogin.value
                 checkResponseLogin(it, user?.loginResult?.token, isError, userViewModel)
             }
             isLoading.observe(this@LoginActivity){
@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
             ).show()
             vm.saveLoginState(true)
             if (token != null) vm.saveToken(token)
-            vm.saveName(loginViewModel.userlogin.value?.loginResult?.name.toString())
+            vm.saveName(loginViewModel.userLogin.value?.loginResult?.name.toString())
         } else {
             when (msg) {
                 "Unauthorized" -> {
