@@ -1,4 +1,4 @@
-package com.example.mystoryapp.ui
+package com.example.mystoryapp.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +13,7 @@ import com.example.mystoryapp.utils.loadImageViaGlide
 class DetailStoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailStoryBinding
     private lateinit var story: ResponseStory.ListStoryItem
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailStoryBinding.inflate(layoutInflater)
@@ -21,16 +22,12 @@ class DetailStoryActivity : AppCompatActivity() {
         initializeTime4A()
 
         story = intent.getParcelableExtra(EXTRA_DATA)!!
-        binding.let {
-            loadImageViaGlide(story.photoUrl.toUri(), binding.imgStory)
-        }
+        loadImageViaGlide(story.photoUrl.toUri(), binding.imgStory)
         with(binding){
             tvItemName.text = story.name
             tvItemCreatedAt.text = convertToTimeAgo(story.createdAt)
             tvItemDescription.text = getString(R.string.description, story.description)
         }
-
-
 
     }
 

@@ -1,11 +1,8 @@
-package com.example.mystoryapp.ui.main
+package com.example.mystoryapp.ui.activity
 
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +17,6 @@ import com.example.mystoryapp.utils.initializeTime4A
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var token: String
-
 
     private val storyViewModel : StoryViewModel by viewModels {
         StoryViewModelFactory()
@@ -51,19 +47,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setStory(story: List<ResponseStory.ListStoryItem>) {
-
         val listUserAdapter = StoryAdapter(story)
         binding.recyclerView.adapter = listUserAdapter
 
     }
 
     private fun showLoading(isLoading: Boolean) {
-        if (isLoading) {
-            binding.progressBarStory.visibility = View.VISIBLE
-        }else
-            binding.progressBarStory.visibility = View.GONE
-    }
-
-    companion object{
+        binding.progressBarStory.visibility = if(isLoading) View.VISIBLE else View.GONE
     }
 }

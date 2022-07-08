@@ -7,12 +7,9 @@ import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mystoryapp.data.response.ResponseStory
 import com.example.mystoryapp.databinding.ItemListStoryBinding
-import com.example.mystoryapp.ui.DetailStoryActivity
+import com.example.mystoryapp.ui.activity.DetailStoryActivity
 import com.example.mystoryapp.utils.convertToTimeAgo
 import com.example.mystoryapp.utils.loadImageViaGlide
-import net.time4j.PrettyTime
-import net.time4j.format.expert.Iso8601Format
-import java.util.*
 
 class StoryAdapter(private val listStory: List<ResponseStory.ListStoryItem>):
     RecyclerView.Adapter<StoryAdapter.ListViewHolder>() {

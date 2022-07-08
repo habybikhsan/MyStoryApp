@@ -3,7 +3,6 @@ package com.example.mystoryapp.ui.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.mystoryapp.data.Story
 import com.example.mystoryapp.data.repository.StoryRepository
 import com.example.mystoryapp.data.response.ResponseStory
 import retrofit2.Call
