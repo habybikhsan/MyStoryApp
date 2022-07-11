@@ -31,6 +31,8 @@
     <string name="no">no</string>
     <string name="yes">yes</string>
     <string name="error_load">Failed to load. Message:</string>
+    <string name="user_created">User created</string>
+    <string name="email_taken">Email is already taken</string>
 
 
 
