@@ -13,16 +13,26 @@ import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModelProvider
 import com.example.mystoryapp.R
 import com.example.mystoryapp.UserPreference
 import com.example.mystoryapp.databinding.ActivityUploadStoryBinding
+import com.example.mystoryapp.ui.model.UploadStoryViewModel
 import com.example.mystoryapp.ui.model.UserViewModel
+import com.example.mystoryapp.ui.modelfactory.UploadStoryViewModelFactory
 import com.example.mystoryapp.ui.modelfactory.ViewModelFactory
 import com.example.mystoryapp.utils.createCustomTempFile
+import com.example.mystoryapp.utils.reduceFileImage
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
@@ -33,14 +43,16 @@ class UploadStoryActivity : AppCompatActivity() {
     private lateinit var token: String
     private var getFile: File? = null
     private lateinit var currentPhotoPath: String
+    private val uploadStoryViewModel : UploadStoryViewModel by viewModels {
+        UploadStoryViewModelFactory()
+    }
     private val launcherIntentCamera = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
         if (it.resultCode == RESULT_OK) {
             val myFile = File(currentPhotoPath)
-
+            getFile = myFile
             val result = BitmapFactory.decodeFile(myFile.path)
-
             binding.imgStory.setImageBitmap(result)
         }
     }
@@ -61,8 +73,52 @@ class UploadStoryActivity : AppCompatActivity() {
             binding.tvName.text = StringBuilder(getString(R.string.post_as)).append(" ").append(it)
         }
 
+        uploadStoryViewModel.isLoading.observe(this){
+            showLoading(it)
+        }
+
+        uploadStoryViewModel.message.observe(this){
+            showToast(it)
+        }
+
         binding.imgStory.setOnClickListener {
             select()
+        }
+        binding.btUpload.setOnClickListener {
+            upload()
+        }
+    }
+
+    private fun upload() {
+        val des = binding.desText.text.toString()
+        when{
+            getFile == null ->{
+                Toast.makeText(
+                    this,
+                    getString(R.string.input_picture),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            des.trim().isEmpty() -> {
+                Toast.makeText(
+                    this,
+                    getString(R.string.input_des),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            else -> {
+                val file = reduceFileImage(getFile as File)
+                val description = des.toRequestBody("text/plain".toMediaType())
+                val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+                val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                    "photo",
+                    file.name,
+                    requestImageFile
+                )
+                uploadStoryViewModel.upload(imageMultipart, description, token)
+
+
+            }
         }
     }
 
@@ -167,6 +223,19 @@ class UploadStoryActivity : AppCompatActivity() {
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if(isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun showToast(msg: String) {
+        Toast.makeText(
+            this,
+            StringBuilder(getString(R.string.message)).append(msg),
+            Toast.LENGTH_SHORT
+        ).show()
+
+        if (msg == "Story created successfully") {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
     }
 
     companion object {
