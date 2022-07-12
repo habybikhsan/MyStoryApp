@@ -10,6 +10,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="name">name</string>
     <string name="description">Description : %s</string>
+    <string name="text_description">Description</string>
     <string name="my_story_app">My Story App</string>
     <string name="email_address">email address</string>
     <string name="password">password</string>
@@ -33,7 +34,16 @@
     <string name="error_load">Failed to load. Message:</string>
     <string name="user_created">User created</string>
     <string name="email_taken">Email is already taken</string>
-
+    <string name="add_story">add Story</string>
+    <string name="upload">Upload</string>
+    <string name="detail_title">%1$s\'s Story</string>
+    <string name="post_as">Post story as</string>
+    <string name="from_galeri">From Galeri</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="cancel">Cencel</string>
+    <string name="select_photo">Select Photo</string>
+    <string name="choose_picture">Choose Picture</string>
+    <string name="package_name">com.example.mystoryapp</string>
 
 
 </resources>

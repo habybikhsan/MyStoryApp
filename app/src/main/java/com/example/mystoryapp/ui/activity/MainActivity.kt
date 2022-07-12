@@ -96,6 +96,10 @@ class MainActivity : AppCompatActivity() {
             showAlertDialog()
             return true
         }
+        if (id == R.id.addStory){
+            startActivity(Intent(this, UploadStoryActivity::class.java))
+            finish()
+        }
         return super.onOptionsItemSelected(item)
     }
 

@@ -26,7 +26,7 @@
         android:id="@+id/email_input"
         style="@style/inputText"
         android:layout_marginTop="28dp"
-        android:background="@color/grey"
+        android:background="@drawable/boarder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title" />
@@ -35,7 +35,7 @@
         android:id="@+id/password_input"
         style="@style/inputText"
         android:layout_marginTop="16dp"
-        android:background="@color/grey"
+        android:background="@drawable/boarder"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

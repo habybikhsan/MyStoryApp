@@ -13,6 +13,8 @@
         <entry key="..\:/MyStoryApp/app/src/main/res/layout/activity_main.xml" value="0.2105978260869565" />
         <entry key="..\:/MyStoryApp/app/src/main/res/layout/item_list_story.xml" value="0.4" />
         <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable-v24/ic_email.xml" value="0.121" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable-v29/boarder.xml" value="0.2505" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable-v29/ic_add_img.xml" value="0.2505" />
         <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable-v29/ic_baseline_clear_24.xml" value="0.121" />
         <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable-v29/ic_person.xml" value="0.2265" />
         <entry key="..\:/Program/MyStoryApp/app/src/main/res/drawable/bg_button.xml" value="0.121" />
@@ -23,8 +25,10 @@
         <entry key="..\:/Program/MyStoryApp/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/Program/MyStoryApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Program/MyStoryApp/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/layout/activity_upload_story.xml" value="0.2" />
         <entry key="..\:/Program/MyStoryApp/app/src/main/res/menu-v26/menu_items.xml" value="0.1" />
         <entry key="..\:/Program/MyStoryApp/app/src/main/res/menu/menu_items.xml" value="0.1" />
+        <entry key="..\:/Program/MyStoryApp/app/src/main/res/xml/file_paths.xml" value="0.1" />
       </map>
     </option>
   </component>

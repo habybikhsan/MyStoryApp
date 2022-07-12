@@ -7,9 +7,14 @@
     <group android:menuCategory="container">
         <item
             android:id="@+id/logout"
-            android:iconTint="@color/black"
             android:title="@string/logout"
             app:showAsAction="never"
+            />
+        <item
+            android:id="@+id/addStory"
+            android:icon="@drawable/ic_add_img"
+            android:title="@string/add_story"
+            app:showAsAction="ifRoom"
             />
     </group>
 </menu>
