@@ -47,6 +47,7 @@
     <string name="input_picture">Please input picture</string>
     <string name="input_des">Please input description</string>
     <string name="message">Massage </string>
+    <string name="register">Register</string>
 
 
 </resources>

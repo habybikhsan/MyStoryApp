@@ -1,11 +1,15 @@
 package com.example.mystoryapp.ui.activity
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -27,11 +31,13 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.hide()
 
         setButtonLoginEnable()
         setTextChangedListener()
         setAction()
+        playAnimation()
+        setActionBar()
+
 
         with(registerViewModel){
             message.observe(this@RegisterActivity){
@@ -41,6 +47,42 @@ class RegisterActivity : AppCompatActivity() {
                 showLoading(it)
             }
         }
+    }
+    @SuppressLint("RestrictedApi")
+    private fun setActionBar() {
+        val actionBar = supportActionBar
+        actionBar?.title = getString(R.string.register)
+        actionBar?.setDefaultDisplayHomeAsUpEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (id == android.R.id.home) {
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+    private fun playAnimation() {
+        val title = ObjectAnimator.ofFloat(binding.Title, View.ALPHA, 1f).setDuration(500)
+        val email = ObjectAnimator.ofFloat(binding.emailInput, View.ALPHA, 1f).setDuration(500)
+        val pass = ObjectAnimator.ofFloat(binding.passwordInput, View.ALPHA, 1f).setDuration(500)
+        val seePass = ObjectAnimator.ofFloat(binding.seePassword, View.ALPHA, 1f).setDuration(500)
+        val btnReg = ObjectAnimator.ofFloat(binding.buttonRegister,View.ALPHA, 1f).setDuration(500)
+        val name = ObjectAnimator.ofFloat(binding.nameInput, View.ALPHA, 1f).setDuration(500)
+
+
+        AnimatorSet().apply {
+            playSequentially(title, name, email, pass, seePass, btnReg)
+            start()
+        }
+
+        ObjectAnimator.ofFloat(binding.Title, View.TRANSLATION_X, -30f, 30f).apply {
+            duration = 2000
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
     }
 
     private fun showLoading(isLoading: Boolean?) {

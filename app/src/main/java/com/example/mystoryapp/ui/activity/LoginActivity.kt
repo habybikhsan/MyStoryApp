@@ -1,8 +1,10 @@
 package com.example.mystoryapp.ui.activity
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,6 +13,7 @@ import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -42,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
         setButtonLoginEnable()
         setTextChangedListener()
         setAction()
+        playAnimation()
         val pref = UserPreference.getInstance(dataStore)
         val userViewModel =ViewModelProvider(this, ViewModelFactory(pref))[UserViewModel::class.java]
 
@@ -62,6 +66,33 @@ class LoginActivity : AppCompatActivity() {
                 showLoading(it)
             }
         }
+    }
+
+    @SuppressLint("Recycle")
+    private fun playAnimation() {
+        val title = ObjectAnimator.ofFloat(binding.Title, View.ALPHA, 1f).setDuration(500)
+        val email = ObjectAnimator.ofFloat(binding.emailInput, View.ALPHA, 1f).setDuration(500)
+        val pass = ObjectAnimator.ofFloat(binding.passwordInput, View.ALPHA, 1f).setDuration(500)
+        val seePass = ObjectAnimator.ofFloat(binding.seePassword, View.ALPHA, 1f).setDuration(500)
+        val btnLogin = ObjectAnimator.ofFloat(binding.buttonLogin,View.ALPHA, 1f).setDuration(500)
+        val register = ObjectAnimator.ofFloat(binding.registerText, View.ALPHA, 1f).setDuration(500)
+        val text = ObjectAnimator.ofFloat(binding.textView, View.ALPHA, 1f).setDuration(500)
+
+        val together = AnimatorSet().apply {
+            playTogether(register, text)
+        }
+
+        AnimatorSet().apply {
+            playSequentially(title, email, pass, seePass, btnLogin, together)
+            start()
+        }
+
+
+        ObjectAnimator.ofFloat(binding.Title, View.TRANSLATION_X, -30f, 30f).apply {
+            duration = 2000
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
     }
 
     private fun checkResponseLogin(
