@@ -31,7 +31,7 @@
             android:name=".ui.activity.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activity.DetailStoryActivity"
+            android:name=".ui.DetailStory.DetailStoryActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"

@@ -11,7 +11,6 @@ import androidx.core.content.ContextCompat
 import com.example.mystoryapp.R
 
 class PasswordEditText : AppCompatEditText{
-    private lateinit var clearButtonImage : Drawable
     private lateinit var emailIcon: Drawable
     var isPassValid: Boolean = false
 

@@ -1,4 +1,4 @@
-package com.example.mystoryapp.ui.activity
+package com.example.mystoryapp.ui.DetailStory
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +23,7 @@ class DetailStoryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initializeTime4A()
+        @Suppress("DEPRECATION")
         story = intent.getParcelableExtra(EXTRA_DATA)!!
         setActionBar(story.name)
 

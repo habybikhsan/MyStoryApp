@@ -7,7 +7,7 @@ import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mystoryapp.data.response.ResponseStory
 import com.example.mystoryapp.databinding.ItemListStoryBinding
-import com.example.mystoryapp.ui.activity.DetailStoryActivity
+import com.example.mystoryapp.ui.DetailStory.DetailStoryActivity
 import com.example.mystoryapp.utils.convertToTimeAgo
 import com.example.mystoryapp.utils.loadImageViaGlide
 
