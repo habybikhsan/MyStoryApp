@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.RegisterActivity">
+    tools:context=".ui.register.RegisterActivity">
 
     <TextView
         android:id="@+id/Title"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0" />
 
-    <com.example.mystoryapp.customview.editText.NameEditText
+    <com.example.myStoryApp.customview.editText.NameEditText
         android:id="@+id/name_input"
         style="@style/inputText"
         android:background="@drawable/boarder"
@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title" />
 
-    <com.example.mystoryapp.customview.editText.EmailEditText
+    <com.example.myStoryApp.customview.editText.EmailEditText
         android:id="@+id/email_input"
         style="@style/inputText"
         android:layout_marginTop="16dp"
@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_input" />
 
-    <com.example.mystoryapp.customview.editText.PasswordEditText
+    <com.example.myStoryApp.customview.editText.PasswordEditText
         android:id="@+id/password_input"
         style="@style/inputText"
         android:layout_marginTop="16dp"
@@ -53,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_input" />
 
-    <com.example.mystoryapp.customview.button.RegisterButton
+    <com.example.myStoryApp.customview.button.RegisterButton
         android:id="@+id/button_register"
         android:layout_width="0dp"
         android:layout_height="48dp"
